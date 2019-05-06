@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+    <h1>{{title}}</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <form name="login" method="POST">
+                    {{ form.hidden_tag() }}                  
+                        <p>
+                            {{ form.username.label }}<br>
+                            {{ form.username(class_="form-control",size=35) }}
+                            
+                            {% for error in form.username.errors %}
+                                <span class="error-message">{{ error }}</span>
+                            {% endfor %}
+                        </p>
+                        <p>
+                            {{ form.password.label }}<br>
+                            {{ form.password(class_="form-control",size=15,type="password") }}
+
+                            {% for error in form.password.errors %}
+                                <span class="error-message">{{ error }}</span>
+                            {% endfor %}
+                            <br>
+                            {{ form.remember_me }}{{form.remember_me.label}}<br>
+                            {{ form.submit(class_="btn btn-primary btn-block") }}   
+                        </p>
+                        
+                        
+                </form>
+            </div>
+            <div class="col-md-4"></div>
+        </div>          
+    </div>
+
+{% endblock %}

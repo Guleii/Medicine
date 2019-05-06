@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block content %}
+        <div class="row">
+            <div class="col-md-12 text-center">
+                
+                <dl class="text-left">
+                    <dt>ID: {{ session['user_id'] }}</dt>
+                    <dd>邮箱 : {{ session['username'] }}</dd>
+                    <dd>部门 : {{ session['department'] }}</dd>
+                    <dd>邮箱 : {{ session['email'] }}</dd>
+                    <dd>真实姓名 : {{ session['real_name'] }}</dd>
+                </dl>
+
+            </div>
+        </div>
+                        
+{% endblock %}

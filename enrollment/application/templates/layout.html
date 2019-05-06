@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <title>药品库存管理系统</title>   
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" type="text/css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                    <div class="container-fluid text-center top-container">
+                        <img src="../static/images/school.png">
+                    </div>
+                    <hr style="border:solid 0.5px rgb(173, 169, 169)">
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+
+                {% include "includes/nav.html" %}
+
+                <!-- 登陆后的欢迎语 -->
+                {% if session['username'] %}
+                    <span class="user">欢迎您，{{ session['username'] }}</span>
+                {% endif %}
+
+
+                <!-- 全局弹窗 -->
+                {% with messages = get_flashed_messages(with_categories=True) %}
+                    {% if messages %}
+                        {% for category, message in messages %}
+                            <div class="alert alert-{{ category }}">
+                                <p>{{ message }}</p>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+
+                {% endwith %}
+
+                {% block content %}
+                {% endblock content %}
+                
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                
+                {% include "includes/footer.html" %}
+            </div>
+            <div class="col-md-2"></div>
+                
+        </div>
+    </div>
+
+
+
+    
+</body>
+
+
+
+</html>

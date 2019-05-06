@@ -1,0 +1,21 @@
+
+header {
+    text-align: center;
+}
+
+li {
+    display: inline;
+    padding: 5px;
+}
+
+.user {
+    float: right;
+    position: absolute;
+    font-size:15px;
+    right:6em;
+    top: 1.5em;
+}
+
+.error-message{
+    color: red;
+}

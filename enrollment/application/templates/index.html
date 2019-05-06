@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% block content %}
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h1>欢迎使用药品库存管理系统.</h1>
+
+                {% if session['is_login'] %}
+                <h3>让我们开始吧.</h3>
+                {% else %}
+                <p>已经注册？<a href='{{ url_for("login") }}'>登陆</a></br>
+                    未注册?<a href='{{ url_for("register") }}'>点击注册</a></p>
+                {% endif %}
+                
+ 
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <p>药品是指用于预防、治疗、诊断人的疾病，有目的地调节人的生理机能并规定有适应症或者功能主治、用法和用量的物质，
+            包括中药材、中药饮片、中成药，化学原料药及其制剂、抗生素、生化药品、放射性药品、血清、疫苗、血液制品和诊断药品等。</p>
+      
+                            
+        </div>
+ 
+{% endblock content %}
+
+
+
+        
